@@ -41,6 +41,7 @@ class Loader:
 
 
         retriever = vectordb.as_retriever()
+        return retriever
         
         
 
