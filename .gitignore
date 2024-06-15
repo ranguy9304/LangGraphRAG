@@ -1,0 +1,34 @@
+# Ignore all system files and personal directories
+/AppData/
+/Contacts/
+/Documents/
+/Favorites/
+/Links/
+/Music/
+/Saved Games/
+/Searches/
+/Videos/
+/NTUSER.*
+/ntuser.*
+*.log
+*.LOG1
+*.LOG2
+*.ini
+*.DAT
+*.blf
+*.regtrans-ms
+# Ignore Visual Studio Code settings
+/.vscode/
+# Ignore temporary files and private data
+/Cookies/
+/Local Settings/
+/NetHood/
+/PrintHood/
+/Recent/
+/SendTo/
+/Start Menu/
+/Templates/
+.env
+*__pycache__*
+*/__pycache__/
+test.py
