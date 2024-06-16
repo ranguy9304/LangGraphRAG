@@ -28,19 +28,45 @@ Follow these steps to set up and run the project:
 3. **Install the requirements**:
    ```sh
    pip install -r requirements.txt
+   choco install wkhtmltopdf
    ```
 
 4. **Configure the environment variables**:
    - Copy the example environment file:
-     ```sh
-     cp .env.example .env
-     ```
+      ```sh
+      cp .env.example .env
+      ```
    - Modify the `.env` file to add your GPT key:
-     ```env
-     OPENAI_API_KEY=your_gpt_key_here
-     ```
+      ```env
+      OPENAI_API_KEY=your_gpt_key_here
+      ```
+   - Add your webpage urls if using webpages (keep it comma seperated without quotations):
+      ```env
+      URLS =url1,url2
+      ```
+   - set the `GET_WEB_PAGES_TO_PDF` to True if downloading webpages else False:
+      ```env
+      GET_WEB_PAGES_TO_PDF=False
 
-5. **Run the main program**:
+      ```
+   - set the `CONVERT_PDF_TO_MD` to True if already have pdf else False:
+      ```env
+      CONVERT_PDF_TO_MD=True
+
+      ```
+   - If using PDF docs directly store them in the path used in `INTERMEDIATE_PDF_DIR`
+   - If using .md docs directly store them in the path used in `DATA_DIR`
+
+
+5. **Setup documents**:
+   from the root directory run
+   ```sh
+   python modules/processDocs.py
+   ```
+   this sets up the webpages and docs. Dont forget to modify the document processing parameters in .env as per your needs.
+
+
+6. **Run the main program**:
    ```sh
    python main.py
    ```
