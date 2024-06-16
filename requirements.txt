@@ -16,3 +16,7 @@ langgraph
 python-dotenv
 pydantic
 typing-extensions
+python-magic 
+python-magic-bin
+pdfkit
+# choco install wkhtmltopdf

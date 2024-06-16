@@ -30,10 +30,10 @@ class NodeHelpers:
 
 
 
-cite_mapper = {"data\\L1-Introduction.pdf":"https://stanford-cs324.github.io/winter2022/lectures/introduction/",
-                "data\\L2-CAPABILITIES.pdf" : "https://stanford-cs324.github.io/winter2022/lectures/capabilities/",
-                "data\\L3-Harms.pdf" :"https://stanford-cs324.github.io/winter2022/lectures/harms-1/" ,
-                "data\\L4-Harms-II.pdf": "https://stanford-cs324.github.io/winter2022/lectures/harms-2/"}
+cite_mapper = {"data\\L1-Introduction.pdf.md":"https://stanford-cs324.github.io/winter2022/lectures/introduction/",
+                "data\\L2-CAPABILITIES.pdf.md" : "https://stanford-cs324.github.io/winter2022/lectures/capabilities/",
+                "data\\L3-Harms.pdf.md" :"https://stanford-cs324.github.io/winter2022/lectures/harms-1/" ,
+                "data\\L4-Harms-II.pdf.md": "https://stanford-cs324.github.io/winter2022/lectures/harms-2/"}
 
 
 
@@ -64,5 +64,6 @@ while inp!="exit":
     message_history = value["message_history"]
     # print(message_history)
     for doc in value["documents"]:
-        print("site : " + cite_mapper[doc.metadata["source"]] + "\t  page : " +str( doc.metadata["page"]) )
+        print(doc.metadata)
+        # print("site : " + cite_mapper[doc.metadata["source"]] + "\t  page : " +str( doc.metadata["page"]) )
 

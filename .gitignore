@@ -33,6 +33,11 @@
 */__pycache__/
 test.py
 /db/
+/db_md/
+
 ./db/
+./db_md/
+
 # Ignore all files in the db directory
 /db/*
+/db_md/*

@@ -4,6 +4,7 @@
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_community.document_loaders import DirectoryLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_community.document_loaders import UnstructuredMarkdownLoader
 from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings
 from dotenv import load_dotenv
@@ -27,18 +28,19 @@ class Loader:
 
                 retriever = vectordb.as_retriever()
                 return retriever
-
-        loader = DirectoryLoader(self.data_directory+'/', glob="./*.pdf", loader_cls=PyPDFLoader)
-
+        
+        # loader = DirectoryLoader(self.data_directory+'/', glob="./*.pdf", loader_cls=PyPDFLoader)
+        loader = DirectoryLoader(self.data_directory+'/', glob="./*.md",loader_cls=UnstructuredMarkdownLoader)
+        print(loader)
         documents = loader.load()
-
+        print("loaded? ")
         text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
         texts = text_splitter.split_documents(documents)
-            
+        print("split? ")
         vectordb = Chroma.from_documents(documents=texts, 
                                         embedding=self.embedding,
                                         persist_directory=self.persist_directory)
-
+        print("persisted? ")
 
         retriever = vectordb.as_retriever()
         return retriever

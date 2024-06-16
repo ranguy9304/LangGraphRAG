@@ -105,7 +105,7 @@ class Generator:
              If the answer is not provided in the retrieved documents and message history, just say that you don't know. Keep the answer detailed. If question is not related to LLM (Large language models)
              and other ai topics just reply with "lets keep the talk relevant to llms"."""),
             ("human", """Use the following pieces of retrieved context and message history to answer the question.
-             If the answer is not provided in the retrieved documents and message history, just say that you don't know. Keep the answer detailed. If question is not related to LLM (Large language models)
+             If the answer is not provided in the retrieved documents and message history, just say that you don't know only use the context to answer the question. Keep the answer detailed. If question is not related to LLM (Large language models)
              and other ai topics just reply with "lets keep the talk relevant to llms".
                 Question: {question}        
                 Context: {context} 
